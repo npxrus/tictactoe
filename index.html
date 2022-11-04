@@ -12,18 +12,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/overlays.css" />
+    <link rel="stylesheet" href="./styles/configuration.css" />
   </head>
   <body>
+    <div class="backdrop"></div>
+
     <header class="page-header">
       <h1>Игра "Крестики-Нолики"</h1>
     </header>
 
     <main>
-      <aside>
+      <aside class="modal config-overlay">
         <h2>Введите имя:</h2>
         <form>
-          <div>
-            <label for="playername">Имя игрока: </label>
+          <div class="form-control">
+            <label for="playername">Имя игрока</label>
             <input type="text" id="playername" name="playername" />
           </div>
 
@@ -41,7 +45,7 @@
             <section>
               <h3>Игрок 1</h3>
               <h4>ИМЯ ПЕРВОГО ИГРОКА</h4>
-              <p>X</p>
+              <p class="player-symbol">X</p>
               <button class="btn btn-alt" type="button">Изменить</button>
             </section>
           </li>
@@ -49,7 +53,7 @@
             <section>
               <h3>Игрок 2</h3>
               <h4>ИМЯ ВТОРОГО ИГРОКА</h4>
-              <p>O</p>
+              <p class="player-symbol">O</p>
               <button class="btn btn-alt" type="button">Изменить</button>
             </section>
           </li>
