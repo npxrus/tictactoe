@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крестики-Нолики</title>
+  </head>
+  <body>
+    <header>
+      <h1>Игра "Крестики-Нолики"</h1>
+    </header>
+
+    <main>
+      <aside>
+        <h2>Введите имя:</h2>
+        <form>
+          <div>
+            <label for="playername">Имя игрока: </label>
+            <input type="text" id="playername" name="playername" />
+          </div>
+
+          <div>
+            <button type="reset">Отменить</button>
+            <button type="submit">Сохранить</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="game-config">
+        <h2 class="visually-hidden">Настройки игры</h2>
+        <ol>
+          <li>
+            <section>
+              <h3>Игрок 1</h3>
+              <h4>ИМЯ ПЕРВОГО ИГРОКА</h4>
+              <p>X</p>
+              <button type="button">Изменить</button>
+            </section>
+          </li>
+          <li>
+            <section>
+              <h3>Игрок 2</h3>
+              <h4>ИМЯ ВТОРОГО ИГРОКА</h4>
+              <p>O</p>
+              <button type="button">Изменить</button>
+            </section>
+          </li>
+        </ol>
+        <button>Начать игру</button>
+      </section>
+
+      <section class="game-active">
+        <h2 class="visually-hidden">Игровое поле</h2>
+
+        <section>
+          <h3>Вы выиграли, <span id="winner-name">ИМЯ ИГРОКА</span>!</h3>
+          <p>Нажмите "Начать игру" для начала новой партии!</p>
+        </section>
+        <p>Ваш ход, <span id="active-player-name">ИМЯ ИГРОКА</span>!</p>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
