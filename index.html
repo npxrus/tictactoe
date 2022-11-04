@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Крестики-Нолики</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
-    <header>
+    <header class="page-header">
       <h1>Игра "Крестики-Нолики"</h1>
     </header>
 
@@ -21,8 +28,8 @@
           </div>
 
           <div>
-            <button type="reset">Отменить</button>
-            <button type="submit">Сохранить</button>
+            <button class="btn btn-alt" type="reset">Отменить</button>
+            <button class="btn" type="submit">Сохранить</button>
           </div>
         </form>
       </aside>
@@ -35,7 +42,7 @@
               <h3>Игрок 1</h3>
               <h4>ИМЯ ПЕРВОГО ИГРОКА</h4>
               <p>X</p>
-              <button type="button">Изменить</button>
+              <button class="btn btn-alt" type="button">Изменить</button>
             </section>
           </li>
           <li>
@@ -43,11 +50,11 @@
               <h3>Игрок 2</h3>
               <h4>ИМЯ ВТОРОГО ИГРОКА</h4>
               <p>O</p>
-              <button type="button">Изменить</button>
+              <button class="btn btn-alt" type="button">Изменить</button>
             </section>
           </li>
         </ol>
-        <button>Начать игру</button>
+        <button class="btn" type="button">Начать игру</button>
       </section>
 
       <section class="game-active">
