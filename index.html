@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/overlays.css" />
     <link rel="stylesheet" href="./styles/configuration.css" />
+    <link rel="stylesheet" href="./styles/game.css" />
   </head>
   <body>
     <div class="backdrop"></div>
@@ -61,15 +62,15 @@
         <button class="btn" type="button">Начать игру</button>
       </section>
 
-      <section class="game-active">
+      <section class="game-board">
         <h2 class="visually-hidden">Игровое поле</h2>
 
-        <section>
+        <section class="game-over">
           <h3>Вы выиграли, <span id="winner-name">ИМЯ ИГРОКА</span>!</h3>
           <p>Нажмите "Начать игру" для начала новой партии!</p>
         </section>
         <p>Ваш ход, <span id="active-player-name">ИМЯ ИГРОКА</span>!</p>
-        <ol>
+        <ol class="game-field">
           <li></li>
           <li></li>
           <li></li>
