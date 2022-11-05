@@ -1,4 +1,5 @@
 let player = 0;
+let activePlayer = 0;
 
 const players = [
   { name: '', symbol: 'X' },
@@ -12,6 +13,8 @@ const form = document.querySelector('form');
 const configError = document.querySelector('.config-error');
 const configInput = document.querySelector('#playername');
 const gameBoard = document.querySelector('.game-board');
+const gameField = document.querySelector('.game-field');
+const activePlayerName = document.querySelector('#active-player-name');
 
 const btnEditPlayerOne = document.querySelector('#edit-player1');
 const btnEditPlayerTwo = document.querySelector('#edit-player2');
@@ -29,3 +32,5 @@ backdrop.addEventListener('click', closeGameConfig);
 btnStartGame.addEventListener('click', startNewGame);
 
 form.addEventListener('submit', saveGameConfig);
+
+gameField.addEventListener('click', selectGameField);

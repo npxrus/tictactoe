@@ -14,5 +14,21 @@ function startNewGame() {
     return;
   }
 
+  activePlayerName.textContent = players[activePlayer].name;
   gameBoard.style.display = 'block';
+}
+
+function switchPlayer() {
+  activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+  activePlayerName.textContent = players[activePlayer].name;
+}
+
+function selectGameField(event) {
+  if (event.target.tagName !== 'LI') {
+    return;
+  }
+
+  event.target.textContent = players[activePlayer].symbol;
+  event.target.classList.add('disabled');
+  switchPlayer();
 }
