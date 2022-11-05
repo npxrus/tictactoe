@@ -1,6 +1,7 @@
 let player = 0;
 let activePlayer = 0;
 let currentRound = 1;
+let gameIsOver = false;
 
 const players = [
   { name: '', symbol: 'X' },
@@ -22,6 +23,8 @@ const configInput = document.querySelector('#playername');
 const gameBoard = document.querySelector('.game-board');
 const gameField = document.querySelector('.game-field');
 const activePlayerName = document.querySelector('#active-player-name');
+const gameOverSection = document.querySelector('.game-over');
+const winnerName = document.querySelector('#winner-name');
 
 const btnEditPlayerOne = document.querySelector('#edit-player1');
 const btnEditPlayerTwo = document.querySelector('#edit-player2');

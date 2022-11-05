@@ -1,3 +1,24 @@
+function resetGame() {
+  activePlayer = 0;
+  currentRound = 1;
+  gameIsOver = false;
+  gameOverSection.style.display = 'none';
+  activePlayerName.parentElement.style.display = 'block';
+  gameOverSection.firstElementChild.innerHTML =
+    'Вы выиграли, <span id="winner-name">ИМЯ ИГРОКА</span>!';
+
+  let gameFieldIndex = 0;
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      gameData[i][j] = 0;
+      gameField.children[gameFieldIndex].textContent = '';
+      gameField.children[gameFieldIndex].classList.remove('disabled');
+      gameFieldIndex++;
+    }
+  }
+}
+
 function openGameModal() {
   backdrop.style.display = 'block';
   gameOverlay.style.display = 'block';
@@ -14,6 +35,8 @@ function startNewGame() {
     return;
   }
 
+  resetGame();
+
   activePlayerName.textContent = players[activePlayer].name;
   gameBoard.style.display = 'block';
 }
@@ -26,14 +49,14 @@ function switchPlayer() {
 function selectGameField(event) {
   const selectedGameField = event.target;
 
-  if (selectedGameField.tagName !== 'LI') {
+  if (selectedGameField.tagName !== 'LI' || gameIsOver) {
     return;
   }
 
   const column = selectedGameField.dataset.col - 1;
   const row = selectedGameField.dataset.row - 1;
 
-  if (gameData[row][col] > 0) {
+  if (gameData[row][column] > 0) {
     return;
   }
 
@@ -42,7 +65,11 @@ function selectGameField(event) {
 
   gameData[row][column] = activePlayer + 1;
 
-  const winner = gameOver();
+  const winnerId = gameOver();
+
+  if (winnerId !== 0) {
+    endGame(winnerId);
+  }
 
   currentRound++;
 
@@ -57,7 +84,10 @@ function gameOver() {
         gameData[i][1] === gameData[i][2]
       ) {
         return gameData[i][0];
-      } else if (
+      }
+    }
+    for (let i = 0; i < 3; i++) {
+      if (
         gameData[0][i] === gameData[1][i] &&
         gameData[1][i] === gameData[2][i]
       ) {
@@ -79,4 +109,18 @@ function gameOver() {
   }
 
   return 0;
+}
+
+function endGame(id) {
+  gameIsOver = true;
+  activePlayerName.parentElement.style.display = 'none';
+  gameOverSection.style.display = 'block';
+
+  if (id > 0) {
+    gameOverSection.firstElementChild.firstElementChild.textContent =
+      players[id - 1].name;
+  } else {
+    console.log(gameOverSection.firstElementChild);
+    gameOverSection.firstElementChild.textContent = 'Ничья!';
+  }
 }
