@@ -6,6 +6,12 @@ const players = [
   { name: '', symbol: 'O' },
 ];
 
+const gameData = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0],
+];
+
 const backdrop = document.querySelector('.backdrop');
 const configOverlay = document.querySelector('.config-overlay');
 const gameOverlay = document.querySelector('.game-overlay');

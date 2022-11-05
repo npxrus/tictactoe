@@ -24,11 +24,23 @@ function switchPlayer() {
 }
 
 function selectGameField(event) {
-  if (event.target.tagName !== 'LI') {
+  const selectedGameField = event.target;
+
+  if (selectedGameField.tagName !== 'LI') {
     return;
   }
 
-  event.target.textContent = players[activePlayer].symbol;
-  event.target.classList.add('disabled');
+  const column = selectedGameField.dataset.col - 1;
+  const row = selectedGameField.dataset.row - 1;
+
+  if (gameData[row][col] > 0) {
+    return;
+  }
+
+  selectedGameField.textContent = players[activePlayer].symbol;
+  selectedGameField.classList.add('disabled');
+
+  gameData[row][column] = activePlayer + 1;
+
   switchPlayer();
 }
