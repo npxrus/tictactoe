@@ -32,6 +32,8 @@
             <input type="text" id="playername" name="playername" />
           </div>
 
+          <p class="config-error"></p>
+
           <div>
             <button id="config-cancel" class="btn btn-alt" type="reset">
               Отменить
@@ -45,28 +47,43 @@
         <h2 class="visually-hidden">Настройки игры</h2>
         <ol>
           <li>
-            <section>
+            <section id="player-1">
               <h3>Игрок 1</h3>
               <h4>ИМЯ ПЕРВОГО ИГРОКА</h4>
               <p class="player-symbol">X</p>
-              <button id="edit-player1" class="btn btn-alt" type="button">
+              <button
+                id="edit-player1"
+                class="btn btn-alt"
+                type="button"
+                data-playerid="1"
+              >
                 Изменить
               </button>
             </section>
           </li>
           <li>
-            <section>
+            <section id="player-2">
               <h3>Игрок 2</h3>
               <h4>ИМЯ ВТОРОГО ИГРОКА</h4>
               <p class="player-symbol">O</p>
-              <button id="edit-player2" class="btn btn-alt" type="button">
+              <button
+                id="edit-player2"
+                class="btn btn-alt"
+                type="button"
+                data-playerid="2"
+              >
                 Изменить
               </button>
             </section>
           </li>
         </ol>
-        <button class="btn" type="button">Начать игру</button>
+        <button id="start-game" class="btn" type="button">Начать игру</button>
       </section>
+
+      <aside class="modal game-overlay">
+        <p>Для начала игры необходимо ввести имена обоих игроков</p>
+        <button id="close-modal" type="button" class="btn">Закрыть</button>
+      </aside>
 
       <section class="game-board">
         <h2 class="visually-hidden">Игровое поле</h2>
